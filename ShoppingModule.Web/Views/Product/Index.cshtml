@@ -1,0 +1,110 @@
+﻿@model IEnumerable<ShoppingModule.Web.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+    int TotalCount = Convert.ToInt32(TempData["CartQuantity"]);
+    TempData.Keep();
+}
+
+<h1>Products</h1>
+
+<p>
+    @if (TotalCount > 0)
+    {
+        <div>
+            <a asp-action="Create">Create New Product</a> | <strong>Products Added To Cart: @TotalCount</strong> | @Html.ActionLink("Create Order", "CreateOrder", "Order") | @Html.ActionLink("Clear Cart", "ClearCart", "Cart")
+        </div>
+    }
+    else
+    {
+        <div>
+            <a asp-action="Create">Create New Product</a> | <strong>Products Added To Cart: @TotalCount</strong>
+        </div>
+    }
+</p>
+
+@if (Model.Count() > 0)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Search">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.FirstOrDefault().Category" class="control-label"></label>
+                    @Html.DropDownList("categoryId", @Model.FirstOrDefault().CategoryList, "Select a Category", new { @class = "form-control" })
+                    <span asp-validation-for="@Model.FirstOrDefault().CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+
+                <div class="form-group">
+                    <label for="SortBy" class="control-label">Sort By</label>
+                    @Html.DropDownList("sortBy", @Model.FirstOrDefault().SortingList, "Select Sorting", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Apply" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form asp-action="Search">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            </form>
+        </div>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @Html.HiddenFor(modelItem => item.ProductId)
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Create", new { id = item.ProductId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }) |
+                    @Html.ActionLink("Add To Cart", "InitializeCart", "Cart", new { id = item.ProductId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

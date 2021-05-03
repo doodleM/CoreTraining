@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "ThankYou";
+    string orderId = ViewData["OrderId"] as string;
+}
+
+<center><h1>Thank You For Your Purchase Order :)</h1><br /></center>
+<center><h1>Your Order ID is : <strong>@orderId</strong></h1></center>
+<hr />
+<div>
+    <a asp-action="Index" asp-controller="Product">Back to Products</a>
+</div>
+

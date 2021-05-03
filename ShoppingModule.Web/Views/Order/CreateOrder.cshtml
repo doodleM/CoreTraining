@@ -1,0 +1,77 @@
+﻿@model ShoppingModule.Web.Models.Order
+
+@{
+    ViewData["Title"] = "CreateOrder";
+}
+
+<h1>Create Purchase Order</h1>
+
+<div>
+    <hr />
+    <form asp-action="CreateOrder">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <dl class="row">
+            @Html.HiddenFor(model => model.ProductIds)
+            @Html.HiddenFor(model => model.TotalPrice)
+            @Html.HiddenFor(model => model.Quantity)
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TotalPrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextBoxFor(model => model.Name)
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextBoxFor(model => model.Email)
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Mobile)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextBoxFor(model => model.Mobile)
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ShippingAddress)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextAreaFor(model => model.ShippingAddress)
+                <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BillingAddress)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextAreaFor(model => model.BillingAddress)
+                <span asp-validation-for="BillingAddress" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-10">
+                <input type="submit" value="Purchase" class="btn btn-danger" />
+            </dt>
+        </dl>
+    </form>
+</div>
+<hr />
+<div>
+    <a asp-action="Index" asp-controller="Product">Back to Products</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

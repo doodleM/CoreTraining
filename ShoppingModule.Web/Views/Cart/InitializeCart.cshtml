@@ -1,0 +1,60 @@
+﻿@model ShoppingModule.Web.Models.Cart
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h1>Add To Cart</h1>
+
+<div>
+    <hr />
+    <form asp-action="AddToCart">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="text-danger"><strong><strong>@Html.DisplayFor(model => model.error)</strong></div><br/>
+        <dl class="row">
+            @*<dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ProductId)
+            </dt>*@
+            @Html.HiddenFor(model => model.ProductId)
+            @Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.Description)
+            @Html.HiddenFor(model => model.Price)
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.TextBoxFor(model => model.Quantity)
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-10">
+                <input type="submit" value="Add" class="btn btn-danger" />
+            </dt>
+        </dl>
+    </form>
+</div>
+<hr />
+<div>
+    <a asp-action="Index" asp-controller="Product">Back to Products</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
