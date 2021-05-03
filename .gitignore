@@ -27,3 +27,6 @@ temp/
 .vscode
 nCrunchTemp*.*
 src/**/bin
+bin/
+obj/
+.vs/
