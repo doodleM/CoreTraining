@@ -135,10 +135,5 @@ namespace ShoppingModule.Web.Controllers
             _productService.DeleteProduct(id);
             return RedirectToAction("Index");
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
     }
 }
