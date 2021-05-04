@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using ShoppingModule.API.Interfaces;
+using ShoppingModule.API.Entities;
 
-namespace ShoppingModule.API.Implementation
+namespace ShoppingModule.API.Services
 {
     public class UnitOfWork : IUnitOfWork
     {

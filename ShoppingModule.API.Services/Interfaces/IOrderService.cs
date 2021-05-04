@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using ShoppingModule.API.Entities;
+using System.Threading.Tasks;
 
-namespace ShoppingModule.API.Interfaces
+namespace ShoppingModule.API.Services
 {
     public interface IOrderService
     {

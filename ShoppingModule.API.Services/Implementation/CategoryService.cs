@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
-using ShoppingModule.API.Interfaces;
+using ShoppingModule.API.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShoppingModule.API.Implementation
+namespace ShoppingModule.API.Services
 {
     public class CategoryService : ICategoryService
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShoppingModule.API.Interfaces
+namespace ShoppingModule.API.Services
 {
     public interface IUnitOfWork : IDisposable
     {

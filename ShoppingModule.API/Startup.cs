@@ -6,8 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using ShoppingModule.API.Implementation;
-using ShoppingModule.API.Interfaces;
+using ShoppingModule.API.Entities;
+using ShoppingModule.API.Services;
 
 namespace ShoppingModule.API
 {

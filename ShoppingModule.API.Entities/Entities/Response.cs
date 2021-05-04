@@ -1,4 +1,4 @@
-﻿namespace ShoppingModule.API
+﻿namespace ShoppingModule.API.Entities
 {
     public class Response<T>
     {

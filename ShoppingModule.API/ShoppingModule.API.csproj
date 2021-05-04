@@ -31,4 +31,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingModule.API.Entities\ShoppingModule.API.Entities.csproj" />
+    <ProjectReference Include="..\ShoppingModule.API.Services\ShoppingModule.API.Services.csproj" />
+  </ItemGroup>
+
 </Project>

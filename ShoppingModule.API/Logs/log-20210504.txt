@@ -223,3 +223,51 @@
 2021-05-04 01:27:18.444 +05:30 [Information] HTTP "POST" "/api/order/purchase" responded 200 in 2.7141 ms
 2021-05-04 01:27:24.125 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 2.0133 ms
 2021-05-04 01:27:24.133 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.0492 ms
+2021-05-04 01:41:01.140 +05:30 [Information] Application starting up
+2021-05-04 01:41:01.543 +05:30 [Information] serilog started.
+2021-05-04 01:41:21.500 +05:30 [Warning] No type was specified for the decimal property '"TotalPrice"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-05-04 01:41:21.503 +05:30 [Warning] No type was specified for the decimal property '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-05-04 01:41:22.386 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 1687.4573 ms
+2021-05-04 01:41:22.596 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 41.9063 ms
+2021-05-04 01:41:26.320 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 9.6469 ms
+2021-05-04 01:41:36.306 +05:30 [Information] HTTP "POST" "/api/product/add" responded 200 in 165.2868 ms
+2021-05-04 01:41:36.333 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 6.4706 ms
+2021-05-04 01:41:36.340 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 2.2558 ms
+2021-05-04 01:41:41.092 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=desc" responded 200 in 3.2485 ms
+2021-05-04 01:41:41.117 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 3.1540 ms
+2021-05-04 01:41:43.292 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 2.4784 ms
+2021-05-04 01:41:43.306 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.2147 ms
+2021-05-04 01:41:48.024 +05:30 [Information] HTTP "GET" "/api/product/getbycategory/1?sortOrder=asc" responded 200 in 19.5505 ms
+2021-05-04 01:41:48.035 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.0531 ms
+2021-05-04 01:41:52.316 +05:30 [Information] HTTP "GET" "/api/product/getbycategory/1?sortOrder=" responded 200 in 3.3206 ms
+2021-05-04 01:41:52.329 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.6127 ms
+2021-05-04 01:41:53.447 +05:30 [Information] HTTP "GET" "/api/product/getbycategory/1?sortOrder=" responded 200 in 1.6747 ms
+2021-05-04 01:41:53.457 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.2247 ms
+2021-05-04 01:41:56.055 +05:30 [Information] HTTP "GET" "/api/product/getbyid/5" responded 200 in 16.9109 ms
+2021-05-04 01:41:58.450 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 1.1721 ms
+2021-05-04 01:41:58.455 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 0.8677 ms
+2021-05-04 01:42:15.832 +05:30 [Information] HTTP "POST" "/api/order/purchase" responded 200 in 37.7191 ms
+2021-05-04 01:42:19.344 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 2.9106 ms
+2021-05-04 01:42:19.350 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.7689 ms
+2021-05-04 01:43:20.558 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 32.0807 ms
+2021-05-04 01:43:20.566 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.6793 ms
+2021-05-04 01:44:08.038 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 6.8590 ms
+2021-05-04 01:44:08.051 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 3.2977 ms
+2021-05-04 01:44:16.863 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 1.8540 ms
+2021-05-04 01:44:16.872 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.3195 ms
+2021-05-04 01:44:28.966 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 4.3421 ms
+2021-05-04 01:44:28.973 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.7610 ms
+2021-05-04 01:44:55.422 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 5.6238 ms
+2021-05-04 01:44:55.458 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 25.6566 ms
+2021-05-04 01:44:59.622 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.4347 ms
+2021-05-04 01:45:02.329 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 3.6815 ms
+2021-05-04 01:45:02.337 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 1.0686 ms
+2021-05-04 01:45:04.819 +05:30 [Information] HTTP "GET" "/api/product/getbyid/4" responded 200 in 3.5997 ms
+2021-05-04 01:45:06.904 +05:30 [Information] HTTP "GET" "/api/product/getall?sortOrder=asc" responded 200 in 1.2586 ms
+2021-05-04 01:45:06.910 +05:30 [Information] HTTP "GET" "/api/category/getall?sortOrder=asc" responded 200 in 0.9750 ms
+2021-05-04 08:16:01.806 +05:30 [Information] Application starting up
+2021-05-04 08:16:02.915 +05:30 [Information] serilog started.
+2021-05-04 08:16:14.350 +05:30 [Warning] No type was specified for the decimal property '"TotalPrice"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-05-04 08:16:14.358 +05:30 [Warning] No type was specified for the decimal property '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2021-05-04 08:16:15.766 +05:30 [Information] HTTP "GET" "/api/category/getall" responded 200 in 3314.5184 ms
+2021-05-04 08:16:26.668 +05:30 [Information] HTTP "GET" "/api/product/getall" responded 200 in 441.2800 ms

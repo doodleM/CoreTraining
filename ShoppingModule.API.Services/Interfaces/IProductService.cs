@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using ShoppingModule.API.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShoppingModule.API.Interfaces
+namespace ShoppingModule.API.Services
 {
     public interface IProductService
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ShoppingModule.API
+namespace ShoppingModule.API.Entities
 {
     public class ApplicationDbContext : DbContext
     {

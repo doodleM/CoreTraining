@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ShoppingModule.API.Interfaces;
+using ShoppingModule.API.Entities;
+using ShoppingModule.API.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

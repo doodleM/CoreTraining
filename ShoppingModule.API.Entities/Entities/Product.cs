@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShoppingModule.API
+namespace ShoppingModule.API.Entities
 {
     public class Product
     {
