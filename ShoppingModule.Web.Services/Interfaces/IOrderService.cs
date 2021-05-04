@@ -1,6 +1,6 @@
-﻿using ShoppingModule.Web.Models;
+﻿using ShoppingModule.Web.Entities;
 
-namespace ShoppingModule.Web.Interfaces
+namespace ShoppingModule.Web.Services
 {
     public interface IOrderService
     {

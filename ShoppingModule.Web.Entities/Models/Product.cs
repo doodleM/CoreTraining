@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShoppingModule.Web.Models
+namespace ShoppingModule.Web.Entities
 {
     public class Product
     {

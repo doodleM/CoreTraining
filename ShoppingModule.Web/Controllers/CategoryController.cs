@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
+using ShoppingModule.Web.Services;
 
 namespace ShoppingModule.Web.Controllers
 {

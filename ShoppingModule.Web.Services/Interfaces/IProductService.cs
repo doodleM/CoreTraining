@@ -1,7 +1,7 @@
-﻿using ShoppingModule.Web.Models;
+﻿using ShoppingModule.Web.Entities;
 using System.Collections.Generic;
 
-namespace ShoppingModule.Web.Interfaces
+namespace ShoppingModule.Web.Services
 {
     public interface IProductService
     {

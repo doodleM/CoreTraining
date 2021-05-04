@@ -1,10 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
 using System.Collections.Generic;
 
-namespace ShoppingModule.Web.Implementation
+namespace ShoppingModule.Web.Services
 {
     public class CategoryService : ICategoryService
     {

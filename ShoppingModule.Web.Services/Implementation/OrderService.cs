@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
 
-namespace ShoppingModule.Web.Implementation
+namespace ShoppingModule.Web.Services
 {
     public class OrderService : IOrderService
     {

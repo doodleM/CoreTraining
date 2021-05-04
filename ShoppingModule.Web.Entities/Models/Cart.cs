@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShoppingModule.Web.Models
+namespace ShoppingModule.Web.Entities
 {
     public class Cart
     {

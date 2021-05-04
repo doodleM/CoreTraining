@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
+using ShoppingModule.Web.Services;
 using System;
 using System.Collections.Generic;
 

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShoppingModule.Web.Implementation;
-using ShoppingModule.Web.Interfaces;
+using ShoppingModule.Web.Services;
 using System;
 
 namespace ShoppingModule.Web

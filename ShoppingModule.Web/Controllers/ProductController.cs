@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
+using ShoppingModule.Web.Services;
 using System.Collections.Generic;
 using System.Linq;
 

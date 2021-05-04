@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using ShoppingModule.Web.Interfaces;
-using ShoppingModule.Web.Models;
+using ShoppingModule.Web.Entities;
+using ShoppingModule.Web.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +21,7 @@ namespace ShoppingModule.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult InitializeCart(int id, string error ="")
+        public IActionResult InitializeCart(int id, string error = "")
         {
             var product = _productService.GetProductById(id);
             if (product != null)

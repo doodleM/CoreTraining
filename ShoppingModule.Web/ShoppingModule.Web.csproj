@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingModule.Web.Entities\ShoppingModule.Web.Entities.csproj" />
+    <ProjectReference Include="..\ShoppingModule.Web.Services\ShoppingModule.Web.Services.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace ShoppingModule.Web.Implementation
+﻿namespace ShoppingModule.Web.Entities
 {
     public class Response<T>
     {
