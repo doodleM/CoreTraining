@@ -5,6 +5,7 @@ namespace ShoppingModule.Web.Entities
 {
     public class Order
     {
+        public string OrderId { get; set; }
         public string ProductIds { get; set; }
         [Required]
         [DisplayName("Total Price")]
@@ -31,5 +32,7 @@ namespace ShoppingModule.Web.Entities
         [DisplayName("Billing Address")]
         [MaxLength(200)]
         public string BillingAddress { get; set; }
+        [MaxLength(50)]
+        public string SearchTerm { get; set; }
     }
 }

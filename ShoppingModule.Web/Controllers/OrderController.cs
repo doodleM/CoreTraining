@@ -20,6 +20,31 @@ namespace ShoppingModule.Web.Controllers
             _orderService = orderService;
         }
 
+        public IActionResult Index()
+        {
+            var orders = new List<Order>();
+            var sessionValue = HttpContext.Session.GetString("SearchedValue");
+            var searchTerm = TempData["SearchTerm"] as string;
+
+            if (string.IsNullOrEmpty(sessionValue))
+            {
+                orders = _orderService.GetAllOrders().ToList();
+            }
+            else
+            {
+                orders = JsonConvert.DeserializeObject<List<Order>>(sessionValue);
+                HttpContext.Session.Remove("SearchedValue");
+                TempData.Remove("CategoryId");
+                TempData.Remove("SortValue");
+            }
+
+            if (orders.Count() > 0)
+            {
+                orders.FirstOrDefault().SearchTerm = searchTerm;
+            }
+            return View(orders.AsEnumerable());
+        }
+
         [HttpGet]
         public IActionResult CreateOrder()
         {
@@ -66,6 +91,25 @@ namespace ShoppingModule.Web.Controllers
         {
             ViewData["OrderId"] = orderId;
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Search(string SearchTerm)
+        {
+            if (!string.IsNullOrEmpty(SearchTerm))
+            {
+                var orders = _orderService.GetAllOrders();
+                orders = orders.Where(x => x.OrderId.ToLower().StartsWith(SearchTerm.ToLower()));
+                HttpContext.Session.SetString("SearchedValue", JsonConvert.SerializeObject(orders));
+                TempData["SearchTerm"] = SearchTerm;
+            }
+            else
+            {
+                var orders = _orderService.GetAllOrders();
+                HttpContext.Session.SetString("SearchedValue", JsonConvert.SerializeObject(orders));
+            }
+            return RedirectToAction("Index");
         }
     }
 }

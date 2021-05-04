@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ShoppingModule.Web.Entities;
 using ShoppingModule.Web.Services;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ShoppingModule.Web.Controllers
 {
@@ -18,8 +22,26 @@ namespace ShoppingModule.Web.Controllers
 
         public IActionResult Index()
         {
-            var categories = _categoryService.GetAllCategories("asc");
-            return View(categories);
+            var categories = new List<Category>();
+            var sessionValue = HttpContext.Session.GetString("SearchedValue");
+            var searchedValue = TempData["SearchTerm"] as string;
+
+            if (string.IsNullOrEmpty(sessionValue))
+            {
+                categories = _categoryService.GetAllCategories("asc")?.ToList();
+            }
+            else
+            {
+                categories = JsonConvert.DeserializeObject<List<Category>>(sessionValue);
+                HttpContext.Session.Remove("SearchedValue");
+                TempData.Remove("SearchTerm");
+            }
+
+            if (categories.Count() > 0)
+            {
+                categories.FirstOrDefault().SearchTerm = searchedValue;
+            }
+            return View(categories.AsEnumerable());
         }
 
         [HttpGet]
@@ -56,6 +78,25 @@ namespace ShoppingModule.Web.Controllers
         public IActionResult Delete(int id)
         {
             _categoryService.DeleteCategory(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Search(string SearchTerm)
+        {
+            if (!string.IsNullOrEmpty(SearchTerm))
+            {
+                var categories = _categoryService.GetAllCategories("asc");
+                categories = categories.Where(x => x.Name.ToLower().StartsWith(SearchTerm.ToLower()));
+                HttpContext.Session.SetString("SearchedValue", JsonConvert.SerializeObject(categories));
+                TempData["SearchTerm"] = SearchTerm;
+            }
+            else
+            {
+                var categories = _categoryService.GetAllCategories("asc");
+                HttpContext.Session.SetString("SearchedValue", JsonConvert.SerializeObject(categories));
+            }
             return RedirectToAction("Index");
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using ShoppingModule.Web.Entities;
+using System.Collections.Generic;
 
 namespace ShoppingModule.Web.Services
 {
@@ -12,6 +13,13 @@ namespace ShoppingModule.Web.Services
         {
             _serviceContract = serviceContract;
             _configuration = configuration;
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            string orderListUrl = string.Format(_configuration["APIEndpoints:Domain"] + _configuration["APIEndpoints:OrderListingUrl"]);
+            var response = _serviceContract.GetAsync<Response<List<Order>>>(orderListUrl)?.Result;
+            return response?.Data;
         }
 
         public string SubmitPurchaseOrder(Order purchaseOrder)

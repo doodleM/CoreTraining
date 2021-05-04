@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using ShoppingModule.API.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,6 +25,14 @@ namespace ShoppingModule.API.Services
             return purchaseOrder.OrderId;
         }
 
+        public async Task<List<Order>> GetAllOrders()
+        {
+            var orders = _db.Orders.AsEnumerable();
+            return orders?.OrderBy(x => x.OrderId)?.ToList();
+        }
+
+        #region Private Methods
+
         private string RandomString(int length)
         {
             Random random = new Random();
@@ -31,5 +40,7 @@ namespace ShoppingModule.API.Services
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        #endregion
     }
 }
